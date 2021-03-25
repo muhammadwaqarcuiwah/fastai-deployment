@@ -49,11 +49,14 @@ def upload_file():
     # pred_class,pred_idx,outputs = learn.predict(img)
     res =  zip (learn.data.classes, outputs.tolist())
     predictions = sorted(res, key=lambda x:x[1], reverse=True)
-    top_predictions = predictions[0:5]
+    top_predictions = predictions[0:1]
+    for a, b in top_predictions:
+        outp = b
     # pprint.pprint( top_predictions)
     # return img.resize(500)
-
-    return jsonify(f'Your cat is a {prediction}, class = {pred_class}, outputs = {outputs.tolist()}, pred_idx= {pred_idx}, Top Predictions = {top_predictions}')
+    namme = pred_class.replace('___', 'CONDITION:')
+    name = namme.replace('_', ' ')
+    return jsonify(f'PLANT NAME: {name} CONFIDENCE: {outp}')
     
 if __name__ == '__main__':
     app.run(debug=False,port=os.getenv('PORT',5000))
