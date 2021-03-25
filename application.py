@@ -55,10 +55,10 @@ def upload_file():
     name1 = namme.replace('_', ' ')
     name2 = name1.replace('(', '')
     name = name2.replace(')', '')
-    for a, b in top_predictions:
-        bnb = a
-        outp = b
-    return jsonify(f'PLANT NAME: {name} \n CONFIDENCE: {outp}')    
+    # for a, b in top_predictions:
+    #     bnb = a
+    #     outp = b
+    return jsonify(f'PLANT NAME: {name} \n CONFIDENCE: {top_predictions}')    
     # pprint.pprint( top_predictions)
     # return img.resize(500)
    
