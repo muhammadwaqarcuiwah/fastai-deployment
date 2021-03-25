@@ -51,18 +51,18 @@ def upload_file():
     predictions = sorted(res, key=lambda x:x[1], reverse=True)
     top_predictions = predictions[0:1]
     # plant = pred_class 
-    namme = top_predictions.replace('___', '\n DISEASE: ')
-    name1 = namme.replace('_', ' ')
-    name2 = name1.replace('(', '')
-    name3 = name2.replace(')', '')
-    name4 = name3.replace('"', '')
-    name5 = name4.replace('[', '')
-    name6 = name5.replace(']', '')
+    # namme = top_predictions.replace('___', '\n DISEASE: ')
+    # name1 = namme.replace('_', ' ')
+    # name2 = name1.replace('(', '')
+    # name3 = name2.replace(')', '')
+    # name4 = name3.replace('"', '')
+    # name5 = name4.replace('[', '')
+    # name6 = name5.replace(']', '')
 
-    # for a, b in top_predictions:
-    #     bnb = a
-    #     outp = b
-    return jsonify(f'{namme}')    
+    for a, b in top_predictions:
+        bnb = a
+        outp = b
+    return jsonify(f'{bnb} , {outp}')    
     # pprint.pprint( top_predictions)
     # return img.resize(500)
    
