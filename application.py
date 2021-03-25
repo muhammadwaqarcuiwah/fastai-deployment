@@ -50,12 +50,15 @@ def upload_file():
     res =  zip (learn.data.classes, outputs.tolist())
     predictions = sorted(res, key=lambda x:x[1], reverse=True)
     top_predictions = predictions[0:1]
-    # namme = pred_class.replace('___', 'CONDITION: ')
-    # name = namme.replace('_', ' ')
-    # for a, b in top_predictions:
-    #     bnb = a
-    #     outp = b
-    return jsonify(f'PLANT NAME:  CONFIDENCE: {top_predictions}')    
+    plant = pred_class 
+    namme = plant.replace('___', 'CONDITION: ')
+    name1 = namme.replace('_', ' ')
+    name2 = name1.replace('(', '')
+    name = name2.replace(')', '')
+    for a, b in top_predictions:
+        bnb = a
+        outp = b
+    return jsonify(f'PLANT NAME: {name} \n CONFIDENCE: {outp}')    
     # pprint.pprint( top_predictions)
     # return img.resize(500)
    
