@@ -58,7 +58,7 @@ def upload_file():
     # for a, b in top_predictions:
     #     bnb = a
     #     outp = b
-    return jsonify(top_predictions)    
+    return jsonify(f'{top_predictions}')    
     # pprint.pprint( top_predictions)
     # return img.resize(500)
    
