@@ -62,7 +62,7 @@ def upload_file():
     for a, b in top_predictions:
         bnb = f"'{a}'"
         outp = b
-    return jsonify({f"'disease': {bnb}, 'score': {outp}"})    
+    return jsonify({'disease': bnb, 'score': outp})    
     # pprint.pprint( top_predictions)
     # return img.resize(500)
    
