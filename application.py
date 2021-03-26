@@ -60,7 +60,7 @@ def upload_file():
     # name6 = name5.replace(']', '')
 
     for a, b in top_predictions:
-        bnb = f"'{a}'"
+        bnb = a
         outp = b
     return jsonify({'disease': bnb, 'score': outp})    
     # pprint.pprint( top_predictions)
