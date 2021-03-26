@@ -60,9 +60,9 @@ def upload_file():
     # name6 = name5.replace(']', '')
 
     for a, b in top_predictions:
-        bnb = f'"{a}"'
+        bnb = f"'{a}'"
         outp = b
-    return jsonify(f'{bnb} , {outp}')    
+    return jsonify(f'[{bnb}, {outp}]')    
     # pprint.pprint( top_predictions)
     # return img.resize(500)
    
